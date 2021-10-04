@@ -1,21 +1,19 @@
 from sklearn import svm
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report
 
 
 class SVM(object):
 
     def __init__(self, kernel: str):
-        """ radial basis function network
+        """ SVM network
         # Arguments
-            input_shape: dimension of the input data
-            e.g. scalar functions have should have input_dimension = 1
-            hidden_shape: the number
-            hidden_shape: number of hidden radial basis functions,
-            also, number of centers.
+            kernel: the kernel used in SVM
         """
-        self.model = svm.SVC(kernel=kernel, C=1, gamma=2)
+        self.model = svm.SVC(kernel=kernel, C=10, gamma=0.1)
 
     def fit(self, X, Y):
-        """ Fits weights using linear regression
+        """ Fits SVM
         # Arguments
             X: training samples
             Y: targets

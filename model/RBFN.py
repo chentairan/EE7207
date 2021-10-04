@@ -77,4 +77,4 @@ class RBFN(object):
         G = self._calculate_interpolation_matrix(X)
         predictions = np.dot(G, self.weights)
 
-        return np.sign(predictions)
+        return predictions
